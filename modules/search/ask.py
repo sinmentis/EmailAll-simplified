@@ -59,9 +59,9 @@ class Ask(Search):
     def run(self):
         self.begin()
         self.search()
-        self.finish()
-        self.save_json()
-        self.save_res()
+        # self.finish()
+        # self.save_json()
+        # self.save_res()
 
 def run(domain):
     """
@@ -71,6 +71,4 @@ def run(domain):
     """
     search = Ask(domain)
     search.run()
-
-if __name__ == '__main__':
-    run('example.com')
+    return search.results

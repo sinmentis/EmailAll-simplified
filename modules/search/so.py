@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# -*- coding:utf-8 -*- 
+# -*- coding:utf-8 -*-
 #
 # @name   : EmailAll - Email Information Gathering Tools
 # @url    : http://github.com/Taonn
@@ -80,9 +80,9 @@ class So(Search):
     def run(self):
         self.begin()
         self.search()
-        self.finish()
-        self.save_json()
-        self.save_res()
+        # self.finish()
+        # self.save_json()
+        # self.save_res()
 
 
 def run(domain):
@@ -93,7 +93,5 @@ def run(domain):
     """
     search = So(domain)
     search.run()
+    return search.results
 
-
-if __name__ == '__main__':
-    run('example.com')

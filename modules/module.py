@@ -32,7 +32,7 @@ request_default_headers = {
 emails = set()
 
 
-class Module(object):
+class Module:
     def __init__(self):
         self.module = 'Module'
         self.source = 'BaseModule'

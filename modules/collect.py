@@ -9,12 +9,13 @@ from config.log import logger
 from config import settings
 
 
-class Collect(object):
+class Collect:
 
     def __init__(self, domain):
         self.domain = domain
         self.modules = []
         self.collect_funcs = []
+        self.results = {}
 
     def get_mod(self):
         """
@@ -38,19 +39,21 @@ class Collect(object):
             func = getattr(import_object, 'run')
             self.collect_funcs.append([func, name])
 
+    def run_func(self, func, func_name):
+        result = func(self.domain)
+        self.results[func_name] = result
+
     def run(self):
         """
             Class entrance
         """
-        logger.log('INFOR', f'Start collecting Emails of {self.domain}')
         self.get_mod()
         self.import_func()
 
         threads = []
 
         for func_obj, func_name in self.collect_funcs:
-            thread = threading.Thread(target=func_obj, name=func_name,
-                                      args=(self.domain,), daemon=True)
+            thread = threading.Thread(target=self.run_func, name=func_name, args=(func_obj, func_name,))
             threads.append(thread)
 
         for t in threads:
@@ -63,7 +66,4 @@ class Collect(object):
             if t.is_alive():
                 logger.log('ALERT', f'{t.name} module thread timed out')
 
-
-if __name__ == '__main__':
-    collect = Collect('example.com')
-    collect.run()
+        return self.results
