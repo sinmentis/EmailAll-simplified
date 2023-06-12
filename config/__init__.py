@@ -1,6 +1,6 @@
 import importlib
 
-class Settings(object):
+class Settings:
     def __init__(self):
         setting_modules = ['config.setting','config.api']
         for setting_module in setting_modules:

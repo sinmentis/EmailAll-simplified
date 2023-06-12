@@ -61,9 +61,9 @@ class Baidu(Search):
     def run(self):
         self.begin()
         self.search()
-        self.finish()
-        self.save_json()
-        self.save_res()
+        # self.finish()
+        # self.save_json()
+        # self.save_res()
 
 
 def run(domain):
@@ -74,7 +74,5 @@ def run(domain):
     """
     search = Baidu(domain)
     search.run()
+    return search.results
 
-
-if __name__ == '__main__':
-    run('example.com')

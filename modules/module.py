@@ -32,7 +32,7 @@ request_default_headers = {
 emails = set()
 
 
-class Module(object):
+class Module:
     def __init__(self):
         self.module = 'Module'
         self.source = 'BaseModule'
@@ -103,7 +103,7 @@ class Module(object):
             return None
         if not check:
             return resp
-        if utils.check_response('GET', resp):
+        if utils.check_response(resp):
             return resp
         return None
 
@@ -133,7 +133,7 @@ class Module(object):
             return None
         if not check:
             return resp
-        if utils.check_response('POST', resp):
+        if utils.check_response(resp):
             return resp
         return None
 
@@ -171,6 +171,6 @@ class Module(object):
             return None
         if not check:
             return resp
-        if utils.check_response('HEAD', resp):
+        if utils.check_response(resp):
             return resp
         return None

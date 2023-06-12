@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# -*- coding:utf-8 -*- 
+# -*- coding:utf-8 -*-
 #
 # @name   : EmailAll - Email Information Gathering Tools
 # @url    : http://github.com/Taonn
@@ -9,7 +9,7 @@ from config import settings
 import json
 
 
-class Output(object):
+class Output:
     def __init__(self):
         self.emails = None
 
