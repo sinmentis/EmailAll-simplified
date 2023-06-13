@@ -5,7 +5,7 @@
 # @url    : http://github.com/Taonn
 # @author : Tao. (Taonn)
 from prettytable import PrettyTable
-from config import settings
+from EmailAll.config import settings
 import json
 
 

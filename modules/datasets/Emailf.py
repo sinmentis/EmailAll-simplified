@@ -5,9 +5,9 @@
 # @url    : http://github.com/Taonn
 # @author : Tao. (Taonn)
 
-from common.search import Search
+from EmailAll.common.search import Search
 from lxml import etree
-from config import settings
+from EmailAll.config import settings
 from prettytable import PrettyTable
 
 

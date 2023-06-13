@@ -2,9 +2,9 @@
 # coding=utf-8
 # Author: @Tao.
 
-from modules.module import Module
-from config import settings
-from config.log import logger
+from EmailAll.modules.module import Module
+from EmailAll.config import settings
+from EmailAll.config.log import logger
 
 import json
 

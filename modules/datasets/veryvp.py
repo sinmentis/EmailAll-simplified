@@ -4,9 +4,9 @@
 # @name   : EmailAll - Email Information Gathering Tools
 # @url    : http://github.com/Taonn
 # @author : Tao. (Taonn)
-from common.search import Search
+from EmailAll.common.search import Search
 from urllib.parse import unquote,quote
-from config import settings
+from EmailAll.config import settings
 import requests
 
 import json

@@ -4,9 +4,9 @@
 # @name   : EmailAll - Email Information Gathering Tools
 # @url    : http://github.com/Taonn
 # @author : Tao. (Taonn)
-from common.search import Search
-from config import settings
-from config.log import logger
+from EmailAll.common.search import Search
+from EmailAll.config import settings
+from EmailAll.config.log import logger
 
 
 class PhoneBook(Search):

@@ -5,8 +5,8 @@
 import threading
 import importlib
 
-from config.log import logger
-from config import settings
+from EmailAll.config.log import logger
+from EmailAll.config import settings
 
 
 class Collect:
@@ -26,7 +26,7 @@ class Collect:
         for module in modules:
             module_path = settings.modules_storage_dir.joinpath(module)
             for path in module_path.rglob('*.py'):
-                import_module = f'modules.{module}.{path.stem}'
+                import_module = f'EmailAll.modules.{module}.{path.stem}'
                 self.modules.append(import_module)
 
     def import_func(self):
