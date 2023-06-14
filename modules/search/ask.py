@@ -10,7 +10,7 @@ import time
 from EmailAll.common.search import Search
 from EmailAll.config.log import logger
 from lxml import etree
-from EmailAll.config import settings
+import EmailAll.config.setting as settings
 
 
 class Ask(Search):

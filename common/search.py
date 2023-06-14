@@ -3,7 +3,7 @@
 # Author: @Tao.
 
 from EmailAll.modules.module import Module
-from EmailAll.config import settings
+import EmailAll.config.setting as settings
 from EmailAll.config.log import logger
 
 import json

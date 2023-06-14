@@ -8,7 +8,7 @@ import time
 import base64
 
 from EmailAll.common.search import Search
-from EmailAll.config import settings
+import EmailAll.config.setting as settings
 from EmailAll.config.log import logger
 from EmailAll.common import utils
 

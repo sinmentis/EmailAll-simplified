@@ -8,7 +8,6 @@
 
 import time
 from EmailAll.common.search import Search
-from EmailAll.config.setting import emails
 from lxml import etree
 
 

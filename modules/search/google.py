@@ -9,7 +9,7 @@ import time
 import re
 from urllib.parse import unquote
 from EmailAll.config.log import logger
-from EmailAll.config import settings
+import EmailAll.config.setting as settings
 
 
 class Google(Search):

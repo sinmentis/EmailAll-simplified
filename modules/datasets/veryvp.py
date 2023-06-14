@@ -5,8 +5,8 @@
 # @url    : http://github.com/Taonn
 # @author : Tao. (Taonn)
 from EmailAll.common.search import Search
-from urllib.parse import unquote,quote
-from EmailAll.config import settings
+from urllib.parse import unquote
+import EmailAll.config.setting as settings
 import requests
 
 import json
@@ -23,15 +23,15 @@ class Veryvp(Search):
 
     def search(self):
         login_url = "http://veryvp.com/user/Login"
-        login_par = {"UserName":settings.veryvp_username,
-                     "Password":settings.veryvp_password,
-                     "ValidateCode":"",
-                     "KeepPassword":"0"}
+        login_par = {"UserName": settings.veryvp_username,
+                     "Password": settings.veryvp_password,
+                     "ValidateCode": "",
+                     "KeepPassword": "0"}
         login_par = {
             'json': unquote(str(login_par)),
         }
 
-        rep = self.post(login_url,login_par)
+        rep = self.post(login_url, login_par)
         if "登录成功" in rep.text:
             self.cookie = requests.utils.dict_from_cookiejar(rep.cookies)
 
@@ -47,7 +47,7 @@ class Veryvp(Search):
             data = unquote(data)
             emails = list()
 
-            if isinstance(data,str):
+            if isinstance(data, str):
                 for e in eval(data):
                     emails.append(e["email"])
                 self.results.update(emails)
@@ -68,4 +68,3 @@ def run(domain):
     search = Veryvp(domain)
     search.run()
     return search.results
-

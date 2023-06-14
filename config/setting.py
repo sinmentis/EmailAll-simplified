@@ -11,8 +11,26 @@ import pathlib
 relative_directory = pathlib.Path(__file__).parent.parent  # EmailAll代码相对路径
 modules_storage_dir = relative_directory.joinpath('modules')  # modules存放目录
 result_save_dir = relative_directory.joinpath('result')
-
 rule_func = list()
-
 emails = list()
 proxy = {'http': '127.0.0.1:2333', 'https': '127.0.0.1:2333'}
+
+
+"""
+API 配置文件
+"""
+
+
+# http://www.veryvp.com/
+veryvp_username = ''
+veryvp_password = ''
+
+# https://www.github.com
+github_token = ''
+
+# snov
+snov_username = ''
+snov_password = ''
+
+# phonebook
+pb_key = ''
