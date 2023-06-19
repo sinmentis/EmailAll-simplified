@@ -15,7 +15,10 @@ from EmailAll.common import utils
 urllib3.disable_warnings()
 
 lock = threading.Lock()
-ua = UserAgent()
+
+# Can use the default json from "<YOUR PATH TO>/fake_useragent/data/browsers.json"
+ua = UserAgent(use_external_data=True, cache_path="./fake_useragent_data/browsers.json")
+
 ip = '{}.{}.{}.{}'.format(*__import__('random').sample(range(0, 255), 4))
 request_default_headers = {
     'Accept': 'text/html,application/xhtml+xml,'
