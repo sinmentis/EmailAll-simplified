@@ -33,8 +33,8 @@ logger.level(name='FATAL', no=50, color='<RED><bold>', icon='☠️')
 
 # 如果你想在命令终端静默运行EmailAll，可以将以下一行中的level设置为QUITE
 # 命令终端日志级别默认为INFOR
-logger.add(sys.stderr, level='QUITE', format=stdout_fmt, enqueue=True)
+# logger.add(sys.stderr, level='QUITE', format=stdout_fmt, enqueue=True)
 # 日志文件默认为级别为DEBUG
-logger.add(log_path, level='QUITE', format=logfile_fmt, enqueue=True, encoding='utf-8')
+# logger.add(log_path, level='QUITE', format=logfile_fmt, enqueue=True, encoding='utf-8')
 
 # 配置摘抄OneForAll
